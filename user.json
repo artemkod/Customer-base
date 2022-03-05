@@ -1,0 +1,110 @@
+{
+    "name": "user",
+    "description": "Работа с пользователями",
+    "commands": {
+        "create": {
+            "parameters": {
+                "access_id": {
+                    "type": "string",
+                    "description": "Идентификатор текущей сессии"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Имя создаваемого пользователя"
+                }
+            },
+            "return": {
+                "id": {
+                    "type": "integer",
+                    "description": "ID созданного пользователя"
+                },
+                "code": {
+                    "type": "integer",
+                    "description": "Код возврата"
+                },
+                "message": {
+                    "type": "string",
+                    "description": "Расшифровка кода возрата"
+                }
+            },
+            "description": "Создание нового пользователя"
+        },
+        "get_list": {
+            "parameters": {
+                "access_id": {
+                    "type": "string",
+                    "description": "Идентификатор текущей сессии"
+                }
+            },
+            "return": {
+                "data": {
+                    "type": "user.list",
+                    "description": "Список пользователей, ассоативный массив пользователь-параметры"
+                },
+                "count": {
+                    "type": "integer",
+                    "description": "Количество пользователей"
+                },
+                "code": {
+                    "type": "integer",
+                    "description": "Код возврата"
+                },
+                "message": {
+                    "type": "string",
+                    "description": "Расшифровка кода возрата"
+                }
+            },
+            "description": "Получение списка пользователей"
+        },
+        "rename": {
+            "parameters": {
+                "access_id": {
+                    "type": "string",
+                    "description": "Идентификатор текущей сессии"
+                },
+                "id": {
+                    "type": "integer",
+                    "description": "ID таблицы"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Новое имя пользователя"
+                }
+            },
+            "return": {
+                "code": {
+                    "type": "integer",
+                    "description": "Код возврата"
+                },
+                "message": {
+                    "type": "string",
+                    "description": "Расшифровка кода возрата"
+                }
+            },
+            "description": "Переименование пользователя"
+        },
+        "delete": {
+            "parameters": {
+                "access_id": {
+                    "type": "string",
+                    "description": "Идентификатор текущей сессии"
+                },
+                "id": {
+                    "type": "integer",
+                    "description": "ID пользователя"
+                }
+            },
+            "return": {
+                "code": {
+                    "type": "integer",
+                    "description": "Код возврата"
+                },
+                "message": {
+                    "type": "string",
+                    "description": "Расшифровка кода возрата"
+                }
+            },
+            "description": "Удалении пользователя"
+        }
+    }
+}

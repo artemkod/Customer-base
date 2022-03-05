@@ -1,0 +1,214 @@
+{
+    "name": "data",
+    "description": "Работа с данными в таблицах",
+    "commands": {
+        "create": {
+            "parameters": {
+                "access_id": {
+                    "type": "string",
+                    "description": "Идентификатор текущей сессии"
+                },
+                "table_id": {
+                    "type": "integer",
+                    "description": "ID таблицы"
+                },
+                "cals": {
+                    "type": "boolean",
+                    "description": "Включить или выключить вычисления"
+                },
+                "data": {
+                    "type": "data.fields",
+                    "description": "Ассоциативные массив ключ-значения, где в качестве ключа используется имя поле"
+                }
+            },
+            "return": {
+                "id": {
+                    "type": "integer",
+                    "description": "ID созданной записи"
+                },
+                "code": {
+                    "type": "integer",
+                    "description": "Код возврата"
+                },
+                "message": {
+                    "type": "string",
+                    "description": "Расшифровка кода возрата"
+                }
+            },
+            "description": "Создание записи в таблице"
+        },
+        "read": {
+            "parameters": {
+                "access_id": {
+                    "type": "string",
+                    "description": "Идентификатор текущей сессии"
+                },
+                "table_id": {
+                    "type": "integer",
+                    "description": "ID таблицы"
+                },
+                "cals": {
+                    "type": "boolean",
+                    "description": "Включить или выключить вычисления"
+                },
+                "fields": {
+                    "type": "data.fields",
+                    "description": "Ассоциативный массив полей"
+                },
+                "filter": {
+                    "type": "data.filter",
+                    "description": "Ассоциативный массив ключ-параметры фильтра"
+                },
+                "sort": {
+                    "type": "data.sort",
+                    "optional": true,
+                    "description": "Ассоциативный массив ключ-параметры сортировки"
+                },
+                "start": {
+                    "type": "integer",
+                    "description": "Номер первой возвращаемой строки"
+                },
+                "limit": {
+                    "type": "integer",
+                    "description": "Количество возвращаемых строк"
+                }
+            },
+            "return": {
+                "count_all": {
+                    "type": "integer",
+                    "description": "Общие количество строк соответствующему данному фильтру"
+                },
+                "count": {
+                    "type": "integer",
+                    "description": "Количество переданных строк"
+                },
+                "data": {
+                    "type": "data.data",
+                    "description": "Строки в таблице с полями и значениями в ассоциативном массиве ключ-параметр"
+                },
+                "code": {
+                    "type": "integer",
+                    "description": "Код возврата"
+                },
+                "message": {
+                    "type": "string",
+                    "description": "Расшифровка кода возрата"
+                }
+            },
+            "description": "Получение записей из таблицы"
+        },
+        "update": {
+            "parameters": {
+                "access_id": {
+                    "type": "string",
+                    "description": "Идентификатор текущей сессии"
+                },
+                "table_id": {
+                    "type": "integer",
+                    "description": "ID таблицы"
+                },
+                "cals": {
+                    "type": "boolean",
+                    "description": "Включить или выключить вычисления"
+                },
+                "data": {
+                    "type": "data.fields",
+                    "description": "Ассоциативные массив ключ-значения, где в качестве ключа используется имя поле"
+                },
+                "filter": {
+                    "type": "data.filter",
+                    "description": "Ассоциативные массив ключ-параметры  фильтра"
+                }
+            },
+            "return": {
+                "count": {
+                    "type": "integer",
+                    "description": "Количество обновленных строк"
+                },
+                "code": {
+                    "type": "integer",
+                    "description": "Код возврата"
+                },
+                "message": {
+                    "type": "string",
+                    "description": "Расшифровка кода возрата"
+                }
+            },
+            "description": "Обновление записей в таблице"
+        },
+        "delete": {
+            "parameters": {
+                "access_id": {
+                    "type": "string",
+                    "description": "Идентификатор текущей сессии"
+                },
+                "table_id": {
+                    "type": "integer",
+                    "description": "ID таблицы"
+                },
+                "cals": {
+                    "type": "boolean",
+                    "description": "Включить или выключить вычисления"
+                },
+                "filter": {
+                    "type": "data.filter",
+                    "description": "Ассоциативные массив ключ-параметры  фильтра"
+                }
+            },
+            "return": {
+                "count": {
+                    "type": "integer",
+                    "description": "Количество удаленных записей"
+                },
+                "code": {
+                    "type": "integer",
+                    "description": "Код возврата"
+                },
+                "message": {
+                    "type": "string",
+                    "description": "Расшифровка кода возрата"
+                }
+            },
+            "description": "Удаление записей в таблице"
+        },
+        "files": {
+            "parameters": {
+                "access_id": {
+                    "type": "string",
+                    "description": "Идентификатор текущей сессии"
+                },
+                "table_id": {
+                    "type": "integer",
+                    "description": "ID таблицы"
+                },
+                "file_field_id": {
+                    "type": "integer",
+                    "description": "ID поля"
+                },
+                "line_id": {
+                    "type": "integer",
+                    "description": "ID записи"
+                },
+                "file_name": {
+                    "type": "string",
+                    "description": "Название файла"
+                }
+            },
+            "return": {
+                "file": {
+                    "type": "data.file",
+                    "description": "Массив ссылок на файлы"
+                },
+                "code": {
+                    "type": "integer",
+                    "description": "Код возврата"
+                },
+                "message": {
+                    "type": "string",
+                    "description": "Расшифровка кода возрата"
+                }
+            },
+            "description": "Получение массива из ссылок на файлы"
+        }
+    }
+}

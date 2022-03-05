@@ -1,0 +1,172 @@
+{
+    "name": "table",
+    "description": "Работа с таблицами",
+    "commands": {
+        "get_perms": {
+            "parameters": {
+                "access_id": {
+                    "type": "string",
+                    "description": "Идентификатор текущей сессии"
+                },
+                "id": {
+                    "type": "integer",
+                    "description": "ID таблицы"
+                }
+            },
+            "return": {
+                "data": {
+                    "type": "table.perms",
+                    "description": "Параметры доступа текущей таблицы"
+                },
+                "code": {
+                    "type": "integer",
+                    "description": "Код возврата"
+                },
+                "message": {
+                    "type": "string",
+                    "description": "Расшифровка кода возрата"
+                }
+            },
+            "description": "Получение списка параметров доступа таблицы"
+        },
+        "create": {
+            "parameters": {
+                "access_id": {
+                    "type": "string",
+                    "description": "Идентификатор текущей сессии"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Имя создаваемой таблицы"
+                }
+            },
+            "return": {
+                "id": {
+                    "type": "integer",
+                    "description": "ID созданной таблицы"
+                },
+                "code": {
+                    "type": "integer",
+                    "description": "Код возврата"
+                },
+                "message": {
+                    "type": "string",
+                    "description": "Расшифровка кода возрата"
+                }
+            },
+            "description": "Создание новой таблицы"
+        },
+        "get_list": {
+            "parameters": {
+                "access_id": {
+                    "type": "string",
+                    "description": "Идентификатор текущей сессии"
+                }
+            },
+            "return": {
+                "data": {
+                    "type": "table.list",
+                    "description": "Список доступных таблиц"
+                },
+                "count": {
+                    "type": "integer",
+                    "description": "Количество таблиц"
+                },
+                "code": {
+                    "type": "integer",
+                    "description": "Код возврата"
+                },
+                "message": {
+                    "type": "string",
+                    "description": "Расшифровка кода возрата"
+                }
+            },
+            "description": "Получение списка доступных таблиц"
+        },
+        "info": {
+            "parameters": {
+                "access_id": {
+                    "type": "string",
+                    "description": "Идентификатор текущей сессии"
+                },
+                "id": {
+                    "type": "integer",
+                    "description": "ID таблицы"
+                }
+            },
+            "return": {
+                "fields": {
+                    "type": "table.info.fields",
+                    "description": "Список доступных полей с типами"
+                },
+                "count": {
+                    "type": "integer",
+                    "description": "Количество строк в таблице"
+                },
+                "size": {
+                    "type": "integer",
+                    "description": "Размер таблицы в байтах"
+                },
+                "code": {
+                    "type": "integer",
+                    "description": "Код возврата"
+                },
+                "message": {
+                    "type": "string",
+                    "description": "Расшифровка кода возрата"
+                }
+            },
+            "description": "Получение информации о таблице"
+        },
+        "rename": {
+            "parameters": {
+                "access_id": {
+                    "type": "string",
+                    "description": "Идентификатор текущей сессии"
+                },
+                "id": {
+                    "type": "integer",
+                    "description": "ID таблицы"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Новое имя таблицы"
+                }
+            },
+            "return": {
+                "code": {
+                    "type": "integer",
+                    "description": "Код возврата"
+                },
+                "message": {
+                    "type": "string",
+                    "description": "Расшифровка кода возрата"
+                }
+            },
+            "description": "Переименование таблицы"
+        },
+        "delete": {
+            "parameters": {
+                "access_id": {
+                    "type": "string",
+                    "description": "Идентификатор текущей сессии"
+                },
+                "id": {
+                    "type": "integer",
+                    "description": "ID таблицы"
+                }
+            },
+            "return": {
+                "code": {
+                    "type": "integer",
+                    "description": "Код возврата"
+                },
+                "message": {
+                    "type": "string",
+                    "description": "Расшифровка кода возрата"
+                }
+            },
+            "description": "Удалении таблицы"
+        }
+    }
+}

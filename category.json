@@ -1,0 +1,33 @@
+{
+  "name": "category",
+  "description": "Работа с категориями",
+  "commands": {
+    "get_list": {
+      "parameters": {
+        "access_id": {
+          "type": "string",
+          "description": "Идентификатор текущей сессии"
+        }
+      },
+      "return": {
+        "data": {
+          "type": "user.list",
+          "description": "Список категорий, ассоативный массив категория-параметры"
+        },
+        "count": {
+          "type": "integer",
+          "description": "Количество категорий"
+        },
+        "code": {
+          "type": "integer",
+          "description": "Код возврата"
+        },
+        "message": {
+          "type": "string",
+          "description": "Расшифровка кода возрата"
+        }
+      },
+      "description": "Получение списка категорий"
+    }
+  }
+}

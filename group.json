@@ -1,0 +1,110 @@
+{
+    "name": "group",
+    "description": "Работа с группами",
+    "commands": {
+        "create": {
+            "parameters": {
+                "access_id": {
+                    "type": "string",
+                    "description": "Идентификатор текущей сессии"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Имя создаваемой группы"
+                }
+            },
+            "return": {
+                "id": {
+                    "type": "integer",
+                    "description": "ID созданной таблицы"
+                },
+                "code": {
+                    "type": "integer",
+                    "description": "Код возврата"
+                },
+                "message": {
+                    "type": "string",
+                    "description": "Расшифровка кода возрата"
+                }
+            },
+            "description": "Создание новой группы доступа"
+        },
+        "get_list": {
+            "parameters": {
+                "access_id": {
+                    "type": "string",
+                    "description": "Идентификатор текущей сессии"
+                }
+            },
+            "return": {
+                "data": {
+                    "type": "group.list",
+                    "description": "Список групп доступа, ассоативный массив группа-параметры"
+                },
+                "count": {
+                    "type": "integer",
+                    "description": "Количество групп"
+                },
+                "code": {
+                    "type": "integer",
+                    "description": "Код возврата"
+                },
+                "message": {
+                    "type": "string",
+                    "description": "Расшифровка кода возрата"
+                }
+            },
+            "description": "Получение списка групп доступа"
+        },
+        "rename": {
+            "parameters": {
+                "access_id": {
+                    "type": "string",
+                    "description": "Идентификатор текущей сессии"
+                },
+                "id": {
+                    "type": "integer",
+                    "description": "ID группы"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Новое имя группы"
+                }
+            },
+            "return": {
+                "code": {
+                    "type": "integer",
+                    "description": "Код возврата"
+                },
+                "message": {
+                    "type": "string",
+                    "description": "Расшифровка кода возрата"
+                }
+            },
+            "description": "Переименование группы"
+        },
+        "delete": {
+            "parameters": {
+                "access_id": {
+                    "type": "string",
+                    "description": "Идентификатор текущей сессии"
+                },
+                "id": {
+                    "type": "integer",
+                    "description": "ID группы"
+                }
+            },
+            "return": {
+                "code": {
+                    "type": "integer",
+                    "description": "Код возврата"
+                },
+                "message": {
+                    "type": "string",
+                    "description": "Расшифровка кода возрата"
+                }
+            },
+            "description": "Удалении группы"
+        }
+    }
+}

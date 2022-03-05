@@ -1,0 +1,72 @@
+{
+  "name": "tip",
+  "description": "Работа с напоминаниями,
+  "commands": {
+    "read": {
+      "parameters": {
+        "access_id": {
+          "type": "string",
+          "description": "Идентификатор текущей сессии"
+        }
+      },
+      "return": {
+        "count_all": {
+          "type": "integer",
+          "description": "Количество напоминаний"
+        },
+        "data": {
+          "type": "data.data",
+          "description": "Напоминания и значениями в ассоциативном массиве ключ-параметрр"
+        },
+        "code": {
+          "type": "integer",
+          "description": "Код возврата"
+        },
+        "message": {
+          "type": "string",
+          "description": "Расшифровка кода возрата"
+        }
+      },
+      "description": "Получение напоминаний"
+    },
+    "update": {
+      "parameters": {
+        "access_id": {
+          "type": "string",
+          "description": "Идентификатор текущей сессии"
+        },
+        "tip_id": {
+          "type": "integer",
+          "description": "ID напоминания"
+        },
+        "popup": {
+          "type": "integer",
+          "description": "Показывать уведомление"
+        },
+        "flag": {
+          "type": "integer",
+          "description": "Перешли по ссылке уведомления"
+        },
+        "inactive": {
+          "type": "integer",
+          "description": "Уведомление неактивно"
+        },
+        "hidden": {
+          "type": "integer",
+          "description": "Закрыть уведомление"
+        }
+      },
+      "return": {
+        "code": {
+          "type": "integer",
+          "description": "Код возврата"
+        },
+        "message": {
+          "type": "string",
+          "description": "Расшифровка кода возрата"
+        }
+      },
+      "description": "Обновление записей в напоминаниях"
+    }
+  }
+}
